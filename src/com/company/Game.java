@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.input.KeyInput;
 import com.company.object.Player;
 
 import javax.swing.*;//GUI toolkit for Java
@@ -20,6 +21,7 @@ import java.awt.event.ActionListener;
         gamelooptimer.start();
         //creating an object of Player class in constructor
         p = new Player(250,150);//player will be 100px right and 100 px down from top left
+        addKeyListener(new KeyInput(p)); //used to take key input
     }
 
     public void paint(Graphics g)
