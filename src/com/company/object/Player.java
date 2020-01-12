@@ -1,12 +1,11 @@
 package com.company.object;
 
 import com.company.GlobalPosition;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class Player  extends GlobalPosition {
-    private String playerimage = "/Images/Player.png";
+    private String playerimage = "/images/player.png";
     public Player(int x, int y)
     {
         super(x, y);
@@ -14,7 +13,8 @@ public class Player  extends GlobalPosition {
 
     public void update()
     {
-
+        x+=2;//x coordinate increases by 2
+        y+=2;//y coordinate increases by 2
     }
 
     public void draw(Graphics2D g2d)

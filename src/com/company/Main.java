@@ -4,7 +4,8 @@ import javax.swing.*;
 
 public class Main{
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         JFrame frame = new JFrame();//package used for opening the window
         frame.pack();
         frame.setSize(640,480);//setting the size of the window
