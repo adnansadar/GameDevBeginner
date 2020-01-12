@@ -22,6 +22,23 @@ public class Player  extends GlobalPosition {
         //y+=2;y coordinate increases by 2
         x+=velX;
         y+=velY;
+        //COLLISION WITH OUTSIDE
+        if(x<0)
+        {
+            x=0;
+        }
+        if(y<0)
+        {
+            y=0;
+        }
+        if(x>560)//size of window minus the horizontal image size
+        {
+            x=560;
+        }
+        if(y>360)
+        {
+            y=360;
+        }
     }
 
     public void keyPressed(KeyEvent e)//player movement when key is pressed
