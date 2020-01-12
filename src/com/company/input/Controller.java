@@ -7,11 +7,12 @@ import java.awt.*;
 import java.util.LinkedList;
 
 public class Controller {
-    LinkedList<Enemy> e = new LinkedList<Enemy>();
+    //LL used here to create multiple enemies
+    static LinkedList<Enemy> e = new LinkedList<Enemy>();
     Enemy TempEnemy;
 
     public Controller()
-    {
+    {//can add multiple enemies like this
         addEnemy(new Enemy(50,50));
         addEnemy(new Enemy(50,200));
         addEnemy(new Enemy(0,300));
@@ -47,6 +48,9 @@ public class Controller {
     {
         e.remove(enemy);
     }
-
+    public static LinkedList<Enemy> getEnemyBounds()//returns value set for each enemy in LL
+    {
+        return e;
+    }
 
 }

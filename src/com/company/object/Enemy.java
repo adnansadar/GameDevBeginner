@@ -17,7 +17,7 @@ public class Enemy extends GlobalPosition {
     public void update()
     {
         x+=speed;
-        if(x > Main.WIDTH-60)//-40 as the origin of the image is on the top left corner
+        if(x > Main.WIDTH-52)//-40 as the origin of the image is on the top left corner
         {//if x is going beyond the screen, move the character 3px to the left
             speed = -3;
         }
@@ -30,6 +30,11 @@ public class Enemy extends GlobalPosition {
     public void draw(Graphics2D g2d)
     {
         g2d.drawImage(getEnemyImage(),x,y,null);
+    }
+
+    public Rectangle getBounds()
+    {
+        return new Rectangle(x,y,32,32);//Creates a rectangle around our player
     }
 
     public Image getEnemyImage()

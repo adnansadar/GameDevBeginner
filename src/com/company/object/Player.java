@@ -1,16 +1,19 @@
-package com.company.object;
+package com.company .object;
 
 import com.company.GlobalPosition;
+import com.company.input.Controller;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.LinkedList;
 
 public class Player  extends GlobalPosition {
     private String playerimage = "/images/player.png";
 
     int velX = 0;
     int velY = 0;
-
+    private LinkedList<Enemy> e = Controller.getEnemyBounds();
     public Player(int x, int y)
     {
         super(x, y);
@@ -31,14 +34,27 @@ public class Player  extends GlobalPosition {
         {
             y=0;
         }
-        if(x>560)//size of window minus the horizontal image size
+        if(x>590)//size of window minus the horizontal image size
         {
-            x=560;
+            x=590;
         }
-        if(y>360)
+        if(y>390)
         {
-            y=360;
+            y=390;
         }
+        Collision();
+    }
+
+    public void Collision()
+    {
+        for(int i=0;i<e.size();i++)
+        {
+            if(getBounds().intersects(e.get(i).getBounds()))
+            {
+                System.out.println("COLLISION!");
+            }
+        }
+
     }
 
     public void keyPressed(KeyEvent e)//player movement when key is pressed
@@ -78,9 +94,15 @@ public class Player  extends GlobalPosition {
 
     }
 
+    public Rectangle getBounds()
+    {
+        return new Rectangle(x,y,32,32);//Creates a rectangle around our player
+    }
+
     public void draw(Graphics2D g2d)
     {
         g2d.drawImage(getPlayerImage(),x,y,null);
+        g2d.draw(getBounds());
     }
     public Image getPlayerImage()
     {
