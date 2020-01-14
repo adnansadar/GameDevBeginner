@@ -1,5 +1,11 @@
 # GameDevBeginner
-This is a basic game that I implemented in Java language mainly using JFrame testing my OOP fundamental concepts. This project starts off right from the base by first selecting the player image then slowly building on to adjust the background image and adding enemies and detecting collision between the player and the enemy.
+This is a basic game that I implemented in Java language mainly using JFrame testing my OOP fundamental concepts. This project starts off right from the base by first selecting the player image then slowly building on to adjust the background image and adding enemies and detecting collision between the player and the enemy.</br>
+
+Game Started                           | Collision Encountered 
+:-------------------------------------:|:-------------------------:
+![image 1](./src/Screenshots/ss1.png)  |  ![image 2](./src/Screenshots/ss2.png)
+ 
+
 
 ## Prerequisites
 1) IDE: Use IntelliJ/Eclipse preferably
